@@ -8,10 +8,10 @@ import SEO from "../components/seo"
 const IndexPage = () => (
   <Layout showTitle={false}>
     <SEO title="Home" keywords={[`gaming`, `video games`, `ripoff games`]} />
-    <h1>Ripoff Games</h1>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
+    <div style={{ margin: 'auto', marginTop: `5rem`, width: '512px' }}>
       <TitleParallax />
     </div>
+    <h1 style={{ textAlign: 'center', marginTop: '6rem', fontSize: '4em' }}>Ripoff Games</h1>
   </Layout>
 )
 

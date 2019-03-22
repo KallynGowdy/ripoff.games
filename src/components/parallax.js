@@ -3,6 +3,8 @@ import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Parallax from 'parallax-js'
 
+import style from './parallax.css'
+
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
  * images with lazy loading and reduced file sizes. The image is loaded using a
@@ -23,9 +25,9 @@ class ParallaxComponent extends Component {
     }
     render() {
         return (
-            <ul ref={el => this.scene = el}>
+            <div className={style.parallax} ref={el => this.scene = el}>
                 {this.props.children}
-            </ul>
+            </div>
         )
     }
 }

@@ -19,24 +19,40 @@ const TitleParallax = ({}) => (
     <StaticQuery
     query={graphql`
       query {
-        layer1: file(relativePath: { eq: "pirate-skull.png" }) {
+        skull: file(relativePath: { eq: "Skull.png" }) {
           childImageSharp {
-            fluid(maxWidth: 300) {
-              ...GatsbyImageSharpFluid
+            fixed(width: 512, height: 384) {
+                ...GatsbyImageSharpFixed_noBase64
             }
           }
+        }
+        sword1: file(relativePath: { eq: "Sword1.png" }) {
+            childImageSharp {
+                fixed(width: 512, height: 384) {
+                    ...GatsbyImageSharpFixed_noBase64
+                }
+            }
+        }
+        sword2: file(relativePath: { eq: "Sword2.png" }) {
+            childImageSharp {
+                fixed(width: 512, height: 384) {
+                    ...GatsbyImageSharpFixed_noBase64
+                }
+            }
         }
       }
     `}
     render={data => 
         <Parallax>
             <Layer depth={0.5}>
-                <Img fluid={data.layer1.childImageSharp.fluid}/>
+                <Img critical={true} fixed={data.skull.childImageSharp.fixed}/>
             </Layer>
-            {/* <Layer depth={0.2}>
+            <Layer depth={0.4}>
+                <Img critical={true} fixed={data.sword1.childImageSharp.fixed}/>
             </Layer>
-            <Layer depth={0.3}>
-            </Layer> */}
+            <Layer depth={0.6}>
+                <Img critical={true} fixed={data.sword2.childImageSharp.fixed}/>
+            </Layer>
         </Parallax>
     }
   />
