@@ -21,22 +21,22 @@ const TitleParallax = ({}) => (
       query {
         skull: file(relativePath: { eq: "Skull.png" }) {
           childImageSharp {
-            fixed(width: 512, height: 384) {
-                ...GatsbyImageSharpFixed_noBase64
+            fluid(maxWidth: 512) {
+                ...GatsbyImageSharpFluid_noBase64
             }
           }
         }
         sword1: file(relativePath: { eq: "Sword1.png" }) {
             childImageSharp {
-                fixed(width: 512, height: 384) {
-                    ...GatsbyImageSharpFixed_noBase64
+                fluid(maxWidth: 512) {
+                    ...GatsbyImageSharpFluid_noBase64
                 }
             }
         }
         sword2: file(relativePath: { eq: "Sword2.png" }) {
             childImageSharp {
-                fixed(width: 512, height: 384) {
-                    ...GatsbyImageSharpFixed_noBase64
+                fluid(maxWidth: 512) {
+                    ...GatsbyImageSharpFluid_noBase64
                 }
             }
         }
@@ -45,13 +45,13 @@ const TitleParallax = ({}) => (
     render={data => 
         <Parallax>
             <Layer depth={0.5}>
-                <Img critical={true} fixed={data.skull.childImageSharp.fixed}/>
+                <Img critical={true} fluid={data.skull.childImageSharp.fluid}/>
             </Layer>
             <Layer depth={0.4}>
-                <Img critical={true} fixed={data.sword1.childImageSharp.fixed}/>
+                <Img critical={true} fluid={data.sword1.childImageSharp.fluid}/>
             </Layer>
             <Layer depth={0.6}>
-                <Img critical={true} fixed={data.sword2.childImageSharp.fixed}/>
+                <Img critical={true} fluid={data.sword2.childImageSharp.fluid}/>
             </Layer>
         </Parallax>
     }

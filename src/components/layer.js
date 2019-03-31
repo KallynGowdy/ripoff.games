@@ -1,8 +1,8 @@
 import React from 'react';
-import style from './layer.css'
+import style from './layer.module.css'
 
-const Layer = ({ depth = 0, children, width = 100, height = 100 }) => (
-    <div className={style.layer} data-depth={depth} width={width} height={height}>
+const Layer = ({ depth = 0, children }) => (
+    <div className={style.layer} data-depth={depth}>
         {children}
     </div>
 );

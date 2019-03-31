@@ -3,7 +3,7 @@ import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Parallax from 'parallax-js'
 
-import style from './parallax.css'
+import style from './parallax.module.css'
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized

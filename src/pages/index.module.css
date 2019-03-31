@@ -1,0 +1,12 @@
+
+.titleParallax {
+    margin: auto;
+    margin-top: 5rem;
+    max-width: 512px;
+}
+
+@media (max-width: 768px) {
+    .titleParallax {
+        max-width: 100%;
+    }
+}
